@@ -1,0 +1,21 @@
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: #0B0B0C; color: #ECE6F0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans"; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 64px 0; }
+.hero { padding: 96px 0; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+.nav a { color: var(--on-surface-variant); text-decoration: none; margin-left: 24px; }
+.nav a:hover { color: var(--on-surface); }
+
+.grid { display: grid; gap: 24px; }
+.grid-3 { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.h-16 { height: 64px; }
+
+/* Buttons, cards, chips, topbar, fab are defined inside the component via CSS variables */
