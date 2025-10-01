@@ -220,11 +220,10 @@ export default function ProjectsPage() {
                         </span>
                       ))}
                     </div>
-                    {
-                      //TODO: cambiar estrella sin borde por estrella rellena si p.destacado
-                    }
+                    {}
                   </div>
-                  <Star style={{ opacity: 0.8 }} />
+                  {(p.fav && <Star style={{ opacity: 1 }} fill="#FF8D41" />) ||
+                    ""}
                 </div>
                 <div style={{ display: "flex", gap: 12, marginTop: 12 }}>
                   {p.demoLink && (

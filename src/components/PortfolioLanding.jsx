@@ -246,7 +246,8 @@ export default function PortfolioLanding() {
           <div className="grid grid-3">
             {projects.map((p) => (
               <ProjectCard key={p.title} {...p} />
-            ))}
+			))
+					  }
           </div>
         </div>
       </section>
@@ -410,6 +411,7 @@ function ProjectCard({
   codeLink,
   demoLink,
   demoEnabled,
+  fav,
 }) {
   return (
     <motion.article
@@ -444,7 +446,7 @@ function ProjectCard({
             {description}
           </p>
         </div>
-        <Star style={{ opacity: 0.8 }} />
+        {(fav && <Star style={{ opacity: 1 }} fill="#FF8D41" />) || ""}
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
         {tags.map((t) => (

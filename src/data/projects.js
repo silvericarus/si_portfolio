@@ -7,6 +7,7 @@ export const projects = [
     codeLink: "https://github.com/silvericarus/base64-js",
     demoLink: "https://base64-js.netlify.app/",
     demoEnabled: true,
+    fav: true,
   },
   {
     title: "si_tablet",
@@ -14,6 +15,7 @@ export const projects = [
       "Script en lua para renderizar una interfaz de tablet en FiveM.",
     tags: ["UX/UI", "Lua", "Game"],
     demoEnabled: false,
+    fav: true,
   },
   {
     title: "just-chess",
