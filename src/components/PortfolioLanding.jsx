@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   ArrowUp,
@@ -10,6 +11,7 @@ import {
   FolderGit2,
   Star,
 } from "lucide-react";
+import { projects } from "../data/projects.js";
 
 export default function PortfolioLanding() {
   return (
@@ -76,31 +78,41 @@ export default function PortfolioLanding() {
       <header className="topbar">
         <div className="container">
           <div className="row h-16">
-            <div className="brand">
-              <div className="brand-badge" />
-              <span
-                style={{
-                  fontSize: 12,
-                  letterSpacing: 2,
-                  textTransform: "uppercase",
-                  color: "var(--on-surface-variant)",
-                }}
-              >
-                Portfolio de silvericarus
-              </span>
-            </div>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <div className="brand">
+                <div className="brand-badge" />
+                <span
+                  style={{
+                    fontSize: 12,
+                    letterSpacing: 2,
+                    textTransform: "uppercase",
+                    color: "var(--on-surface-variant)",
+                  }}
+                >
+                  Portfolio
+                </span>
+              </div>
+            </Link>
             <nav className="nav">
-              <a href="#proyectos">Proyectos</a>
+              <Link to="/proyectos">Proyectos</Link>
               <a href="#sobre-mi">Sobre mí</a>
               <a href="#contacto">Contacto</a>
             </nav>
             <div className="actions">
-              <a className="btn btn-outlined" href="#contacto">
+              <a
+                className="btn btn-outlined"
+                href="mailto:agonzalezrosa@hotmail.com"
+              >
                 <Mail size={16} />
                 Contáctame
               </a>
-              <a className="btn btn-filled" href="#proyectos">
-                <FolderGit2 size={16} />
+              <a
+                className="btn btn-filled"
+                href="https://github.com/silvericarus"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github size={16} />
                 Ver mis proyectos
               </a>
             </div>
@@ -460,31 +472,3 @@ function ProjectCard({
     </motion.article>
   );
 }
-
-// Datos de ejemplo para las cards
-const projects = [
-  {
-    title: "base64.js",
-    description:
-      "Página web para codificar y decodificar Base64 en Javascript puro.",
-    tags: ["Web", "Encryption", "Cryptography"],
-    codeLink: "https://github.com/silvericarus/base64-js",
-    demoLink: "https://base64-js.netlify.app/",
-    demoEnabled: true,
-  },
-  {
-    title: "si_tablet",
-    description:
-      "Script en lua para renderizar una interfaz de tablet en FiveM.",
-    tags: ["UX/UI", "Lua", "Game"],
-    demoEnabled: false,
-  },
-  {
-    title: "just-chess",
-    description: "Aplicación web de ajedrez construida con JavaScript puro.",
-    tags: ["Web", "Game", "JavaScript"],
-    codeLink: "https://github.com/silvericarus/just-chess",
-    demoLink: "https://just-chess.netlify.app/",
-    demoEnabled: true,
-  },
-];
