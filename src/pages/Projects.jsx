@@ -185,8 +185,23 @@ export default function ProjectsPage() {
                     background:
                       "linear-gradient(160deg, var(--md-sys-color-primary-container), color-mix(in srgb, var(--md-sys-color-primary) 35%, black))",
                     border: "1px solid rgba(255,255,255,0.08)",
-                  }} //TODO cambiar por imagen si existe p.image
-                />
+                    alignContent: "center",
+                  }}
+                >
+                  {p.imageLink &&
+                    ((
+                      <img
+                        style={{
+                          display: "block",
+                          margin: "auto",
+                        }}
+                        src={p.imageLink}
+                        alt="logo"
+                        width="91.5px"
+                      ></img>
+                    ) ||
+                      "")}
+                </div>
                 <div
                   style={{
                     display: "flex",
