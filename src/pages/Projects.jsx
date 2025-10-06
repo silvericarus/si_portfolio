@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                 Proyectos
               </Link>
               <Link
-                to="/" //TODO: cambiar a /sobre-mi cuando exista esa página
+                to="/sobre-mi"
                 style={{
                   color: "var(--on-surface-variant)",
                   textDecoration: "none",

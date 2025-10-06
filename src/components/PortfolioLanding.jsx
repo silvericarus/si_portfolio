@@ -95,7 +95,7 @@ export default function PortfolioLanding() {
             </Link>
             <nav className="nav">
               <Link to="/proyectos">Proyectos</Link>
-              <a href="#sobre-mi">Sobre mí</a>
+              <Link to="/sobre-mi">Sobre mi</Link>
               <a href="#contacto">Contacto</a>
             </nav>
             <div className="actions">
