@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Alberto González Rosa</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+	<div class="container topbar-inner">
+	  <a href="#/" class="brand" aria-label="Ir al inicio">
+            <span class="brand-mark"></span>
+            <span class="brand-text">Portafolio</span>
+          </a>
+	  <nav class="nav" aria-label="Navegación principal">
+            <a class="nav-link" href="#/" data-nav="home">Inicio</a>
+            <a class="nav-link" href="#/proyectos" data-nav="projects">Proyectos</a>
+            <a class="nav-link" href="#/sobre-mi" data-nav="about">Sobre mí</a>
+            <a class="nav-link" href="#/contacto" data-nav="contact">Contacto</a>
+          </nav>
+	  <div class="top-actions">
+            <a class="btn btn-outlined" href="mailto:tu.email@ejemplo.com">Contrátame</a>
+            <a class="btn btn-filled" href="https://github.com/tu-usuario" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+	</div>
+      </header>
+
+      <main id="app" tabindex="-1"></main>
+
+      <footer class="footer">
+	<div class="container footer-inner">
+          <span>© <span id="year"></span> · Tu Nombre</span>
+
+          <span class="footer-links">
+            <a href="#/sobre-mi">Sobre mí</a>
+            <a href="#/proyectos">Proyectos</a>
+            <a href="#/contacto">Contacto</a>
+          </span>
+	</div>
+      </footer>
+
+      <button class="fab" id="scrollTopBtn" type="button" aria-label="Volver arriba" title="Volver arriba">
+      ↑
+      </button>
+
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de certificación">
+	<div class="card lightbox-panel">
+          <div class="lightbox-head">
+            <div>
+              <h3 class="card-title" id="lightboxTitle">Certificación</h3>
+              <p class="card-meta" id="lightboxMeta"></p>
+            </div>
+
+	    <button class="btn btn-outlined btn-small" id="lightboxClose" type="button">Cerrar</button>
+	  </div>
+
+	  <div class="lightbox-image" id="lightboxImage"></div>
+
+	  <div class="lightbox-foot">
+            <div class="chips-row" id="lightboxTags"></div>
+
+            <div class="actions-row no-margin">
+              <button class="btn btn-outlined btn-small" id="lightboxPrev" type="button">‹ Anterior</button>
+              <button class="btn btn-filled btn-small" id="lightboxNext" type="button">Siguiente ›</button>
+            </div>
+          </div>
+	</div>
+      </div>	  
+    </div>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
