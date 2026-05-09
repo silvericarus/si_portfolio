@@ -3,113 +3,296 @@
    ========================================================= */
 
 const profile = {
-  name: "Tu Nombre",
-  initials: "TN",
-  role: "Frontend Developer",
-  email: "tu.email@ejemplo.com",
-  github: "https://github.com/tu-usuario",
-  linkedin: "https://www.linkedin.com/in/tu-usuario",
+  name: "Alberto",
+  initials: "AGR",
+  role: "Desarrollador de sistemas de videojuegos",
+  email: "agonzalezrosa@hotmail.com",
+  github: "https://github.com/silvericarus",
+  linkedin: "https://www.linkedin.com/in/alberto-gonzalez-rosa",
   cv: "cv.pdf",
   intro:
     "Desarrollador orientado a interfaces limpias, modernas y eficientes. Trabajo con sistemas visuales consistentes, accesibilidad y rendimiento.",
-  stack: ["JavaScript", "HTML", "CSS", "Material 3", "Accesibilidad", "SEO técnico"],
+  stack: [
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Accesibilidad",
+    "Desarrollo de videojuegos",
+  ],
   stats: [
-    { value: "5+", label: "Años de experiencia" },
+    { value: "2+", label: "Años de experiencia" },
     { value: "30+", label: "Proyectos" },
-    { value: "20+", label: "Clientes" }
-  ]
+  ],
 };
 
 const projects = [
   {
-    title: "UI Kit M3 Dark",
+    title: "Scoreboards",
     description:
-      "Componentes y tokens visuales para iniciar interfaces oscuras con estética Material You.",
-    tags: ["Design System", "CSS", "A11y"],
-    year: "2026",
-    demoEnabled: true,
-    demoLink: "#",
-    codeLink: "#"
+      "Durante tres meses, trabajé en el desarrollo de una aplicación móvil como parte de mi proyecto final para el CFGS en Desarrollo de Aplicaciones Multiplataforma, aplicando y ampliando mis conocimientos en el campo del desarrollo de aplicaciones móviles para Android.",
+    tags: ["Android", "Mobile", "UX/UI"],
+    year: "2018",
+    demoEnabled: false,
+    demoLink: "",
+    codeLink: "https://github.com/silvericarus/ScoreBoards",
   },
   {
-    title: "Portafolio Performante",
+    title: "Shutter",
     description:
-      "Portfolio estático con estructura ligera, responsive y compatible con hosting estático.",
-    tags: ["Vanilla JS", "SEO", "Performance"],
-    year: "2026",
-    demoEnabled: true,
-    demoLink: "#",
-    codeLink: "#"
+      "El proyecto final de mi CFGS en Desarrollo de Aplicaciones Web, que consiste en una comunidad web para fotógrafos de todo tipo.",
+    tags: ["PHP", "UX/UI", "Backend"],
+    year: "2019",
+    demoEnabled: false,
+    demoLink: "",
+    codeLink: "https://github.com/silvericarus/shutter",
   },
   {
-    title: "Dashboard Analítico",
+    title: "lifegame-js",
+    description: "Implementación del famoso Juego de la Vida de John Conway",
+    tags: ["Javascript", "Math", "Game Dev"],
+    year: "2023",
+    demoEnabled: true,
+    demoLink: "https://lifegame-js.netlify.app/",
+    codeLink: "https://github.com/silvericarus/lifegame-js",
+  },
+  {
+    title: "base64-js",
     description:
-      "Interfaz de panel con tarjetas, filtros y visualización ordenada de métricas.",
-    tags: ["UI", "Data", "Responsive"],
+      "Aplicación web básica para adentrarme en el campo de la criptografía. Detrás de un diseño sencillo se esconde el aspecto realmente interesante: el cifrado y descifrado mediante el método de base 64 para cadenas de caracteres.",
+    tags: ["Javascript", "Cryptography"],
+    year: "2023",
+    demoEnabled: true,
+    demoLink: "https://base64-js.netlify.app/",
+    codeLink: "https://github.com/silvericarus/base64-js",
+  },
+  {
+    title: "klondike-js",
+    description: "Implementación del Solitario (Klondike) en Javascript.",
+    tags: ["Javascript", "UX/UI", "Game Dev"],
+    year: "2025",
+    demoEnabled: true,
+    demoLink: "https://base64-js.netlify.app/",
+    codeLink: "https://github.com/silvericarus/base64-js",
+  },
+  {
+    title: "si_ecosystem",
+    description: "Simulador de ecosistemas en Javascript.",
+    tags: ["Javascript", "UX/UI", "Game Dev"],
+    year: "2025",
+    demoEnabled: true,
+    demoLink: "https://si-ecosystem.netlify.app/",
+    codeLink: "https://github.com/silvericarus/si_ecosystem",
+  },
+  {
+    title: "pedropovedajaen",
+    description:
+      "App para la Parroquia San Pedro Poveda de Jaén. Muestra las últimas noticias de la parroquia, información relevante para los feligreses, y los métodos de contacto.",
+    tags: ["Android", "Mobile"],
     year: "2025",
     demoEnabled: false,
     demoLink: "",
-    codeLink: "#"
+    codeLink: "https://github.com/silvericarus/pedropovedajaen",
   },
-  {
-    title: "Landing Comercial",
-    description:
-      "Página de presentación para producto digital con CTA claro y jerarquía visual fuerte.",
-    tags: ["Landing", "Copy", "CSS"],
-    year: "2025",
-    demoEnabled: true,
-    demoLink: "#",
-    codeLink: "#"
-  }
 ];
 
 const certifications = [
   {
-    title: "Google UX Design Professional Certificate",
-    issuer: "Coursera · Google",
-    date: "2025-03-10",
-    credentialId: "ABC-123-UX",
-    credentialUrl: "#",
-    image: "",
-    tags: ["UX", "Investigación", "Prototipado"]
+    title: "Cisco CCNA",
+    issuer: "Cisco",
+    date: "2015-06-01",
+    credentialId: "",
+    credentialUrl: "",
+    image:
+      "data:image/png;base64,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",
+    tags: ["Redes", "IPv4", "IPv6"],
   },
   {
-    title: "React Developer",
-    issuer: "Meta",
-    date: "2024-11-02",
-    credentialId: "META-RD-2024",
-    credentialUrl: "#",
-    image: "",
-    tags: ["React", "SPA", "Rendimiento"]
+    title: "Cambridge ESOL Level 1 Certificate in ESOL International",
+    issuer: "Cambridge University",
+    date: "2012-06-01",
+    credentialId: "500/2705/0",
+    credentialUrl: "",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu7zaGd8ZOGi8NsXYgEDH8mUyO7JWhGC9e7A&s",
+    tags: ["Inglés"],
   },
   {
-    title: "Web Accessibility Specialist",
-    issuer: "IAAP",
-    date: "2024-05-20",
-    credentialId: "IAAP-WAS-5678",
-    credentialUrl: "#",
+    title: 'Ciclo de Seminarios "Los 7 hábitos de la gente altamente efectiva"',
+    issuer: "Colegio Mayor Albayzín",
+    date: "2017-05-20",
+    credentialId: "",
+    credentialUrl: "",
     image: "",
-    tags: ["A11y", "WCAG", "Auditoría"]
-  }
+    tags: ["Actitud positiva", "Efectividad"],
+  },
+  {
+    title: "Automate the Boring Stuff with Python Programming",
+    issuer: "Udemy",
+    date: "2023-06-20",
+    credentialId: "UC-414ca96f-778e-4d10-b4ef-16877564da61",
+    credentialUrl:
+      "https://www.udemy.com/certificate/UC-414ca96f-778e-4d10-b4ef-16877564da61/",
+    image:
+      "https://udemy-certificate.s3.amazonaws.com/image/UC-414ca96f-778e-4d10-b4ef-16877564da61.jpg?v=1686357330000",
+    tags: ["Python"],
+  },
+  {
+    title: "Master en TypeScript, JavaScript Moderno, ES2023, APIs HTML5",
+    issuer: "Udemy",
+    date: "2023-06-19",
+    credentialId: "UC-ae34533b-62b7-4b94-837d-41938aa92a02",
+    credentialUrl:
+      "https://www.udemy.com/certificate/UC-ae34533b-62b7-4b94-837d-41938aa92a02/",
+    image:
+      "https://udemy-certificate.s3.amazonaws.com/image/UC-ae34533b-62b7-4b94-837d-41938aa92a02.jpg?v=1686418094000",
+    tags: ["Javascript", "Typescript", "Programación Orientada a Objetos"],
+  },
+  {
+    title: "The Complete 2024 Web Development Bootcamp",
+    issuer: "Udemy",
+    date: "2024-05-19",
+    credentialId: "UC-26e682a7-6572-4bab-930e-b8d2c0fe663c",
+    credentialUrl:
+      "https://www.udemy.com/certificate/UC-26e682a7-6572-4bab-930e-b8d2c0fe663c/",
+    image:
+      "https://udemy-certificate.s3.amazonaws.com/image/UC-26e682a7-6572-4bab-930e-b8d2c0fe663c.jpg?v=1686418094000",
+    tags: [
+      "Express.js",
+      "Web3",
+      "React.js",
+      "PostgreSQL",
+      "Node.js",
+      "Next.js",
+      "Javascript Embebido (EJS)",
+      "Google Auth",
+    ],
+  },
+  {
+    title: "Aprende Godot Engine 4 | Curso completo | Videojuegos 2D",
+    issuer: "Udemy",
+    date: "2024-11-19",
+    credentialId: "UC-91c773eb-66cc-41e7-b2c8-0e7111cd1bbf",
+    credentialUrl:
+      "https://www.udemy.com/certificate/UC-91c773eb-66cc-41e7-b2c8-0e7111cd1bbf/",
+    image:
+      "https://udemy-certificate.s3.amazonaws.com/image/UC-91c773eb-66cc-41e7-b2c8-0e7111cd1bbf.jpg?v=1686418094000",
+    tags: ["Godot Engine", "Desarrollo de videojuegos"],
+  },
 ];
 
 const experience = [
   {
-    role: "Frontend Developer",
-    company: "Proyecto personal / freelance",
-    period: "2024 — Presente",
+    role: "Game Developer",
+    company: "Freelance",
+    period: "feb. 2026 — Presente",
     description:
-      "Diseño y desarrollo de interfaces web limpias, responsive y orientadas a rendimiento.",
-    tags: ["JavaScript", "CSS", "Performance"]
+      "En este nuevo proyecto, estoy colaborando con mi equipo para crear experiencias interactivas ricas y emocionantes.",
+    tags: ["Desarrollo de videojuegos", "Gestión de proyectos"],
   },
   {
-    role: "UI Developer",
-    company: "Proyectos seleccionados",
-    period: "2022 — 2024",
+    role: "Comercial técnico",
+    company: "A2 Informática Jaén S.L.",
+    period: "sept. 2025 — dic. 2025",
     description:
-      "Construcción de componentes reutilizables y sistemas visuales coherentes para productos digitales.",
-    tags: ["Design Systems", "A11y", "Material 3"]
-  }
+      "En este rol me especializé en la comercialización de las soluciones de gestión, contabilidad y facturación de Cegid (gama Informática3). Mi labor consistía en asesorar a empresas de distintos sectores, entendiendo sus necesidades y presentando cómo nuestras herramientas pueden optimizar sus procesos administrativos y financieros. Mi objetivo era acompañar a los clientes en todo el proceso de decisión, ofreciéndoles una visión clara de las ventajas del software y asegurando que cuenten con la información necesaria para elegir la solución que mejor se adapte a su negocio.",
+    tags: [
+      "Consultoría de ventas técnicas",
+      "Soporte técnico",
+      "Ventas"
+    ],
+  },
+  {
+    role: "Representante de ventas",
+    company: "bofrost* España",
+    period: "abr. 2025 — jun. 2025",
+    description:
+      "Como Representante de Ventas en bofrost* España, formé parte de un equipo enfocado en ofrecer una experiencia personalizada a cada cliente, asegurando un servicio cercano y de calidad. Mi día a día implicaba visitas programadas a domicilio, presentación de productos gourmet y gestión de pedidos, siempre con un enfoque orientado a resultados y a la satisfacción del cliente. Durante esta etapa desarrollé una comunicación efectiva tanto con todos los clientes, adaptándome a distintos perfiles y situaciones. En un entorno multicultural, también fue clave interactuar con clientes que no hablaban español, lo que me permitió desenvolverme con soltura en inglés en contextos comerciales y cotidianos. Esta experiencia me permitió afianzar una actitud proactiva, resolutiva y cercana en cada interacción.",
+    tags: [
+      "Comunicación interpersonal",
+      "Atención al cliente",
+      "Ventas",
+      "Inglés comercial",
+    ],
+  },
+  {
+    role: "Diseñador UX/UI",
+    company: "Universidad de Málaga",
+    period: "nov. 2024 — dic. 2024",
+    description:
+      "En este proyecto, he colaborado en la realización del diseño UX/UI de una aplicación junto a mi equipo. Dado que el enfoque principal ha sido la accesibilidad, he dedicado tiempo a aprender y aplicar algunas técnicas que habitualmente no son prioritarias para muchos desarrolladores, además de fomentar un sólido trabajo en equipo con mis compañeros.",
+    tags: [
+      "Accesibilidad",
+      "Diseño de experiencia de usuario (UX)",
+      "Diseño centrado en el usuario",
+      "Prototipado",
+      "Figma",
+    ],
+  },
+  {
+    role: "Auxiliar administrativo (Atención al público)",
+    company: "Yainaim S.L.",
+    period: "abr. 2023 — jun. 2024",
+    description:
+      "En mi trabajo actual, he fortalecido mi capacidad de comunicación interpersonal y he desarrollado habilidades analíticas para responder eficazmente a diversas situaciones. Adicionalmente, he adquirido experiencia en la creación y organización de contenido publicitario para una amplia gama de propiedades inmobiliarias, empleando sistemas de almacenamiento en la nube para optimizar su gestión. Asimismo, mi educación bilingüe me permite desempeñarme como intérprete efectivo y atender a clientes que hablen inglés con fluidez.",
+    tags: [
+      "Inglés",
+      "Cloud",
+      "Habilidades sociales",
+      "Anuncios inmobiliarios",
+      "Trabajo en equipo",
+    ],
+  },
+  {
+    role: "Programador Junior",
+    company: "CAS TRAINING",
+    period: "mar. 2020 — abr. 2020",
+    description:
+      "Una gran oportunidad en la que he aprendido mucho sobre programación para Android e iOS, la cual me ofreció la oportunidad de participar en varios proyectos muy interesantes con un equipo que funcionaba bien, enseñándome más sobre trabajo en equipo efectivo.",
+    tags: [
+      "Android",
+      "Git",
+      "Programación Orientada a Objetos",
+      "Bases de datos",
+      "SQL",
+    ],
+  },
+  {
+    role: "Empleado técnico en prácticas",
+    company: "BuyIn EXCLUSIVE",
+    period: "mar. 2019 — jun. 2019",
+    description:
+      "En esta empresa he aprendido la gestión de un framework PHP, además de mejorar aún más mi trabajo en equipo y toma de decisiones.",
+    tags: ["PHP", "Git", "Javascript", "Bases de datos", "SQL"],
+  },
+  {
+    role: "Empleado técnico en prácticas",
+    company: "The Cloud Gate",
+    period: "mar. 2018 — jun. 2018",
+    description:
+      "He trabajado 4 meses en esta empresa durante el transcurso del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Multiplataforma, aprendiendo mucho de mis compañeros y aumentando el conocimiento que ya tenía del sector del desarrollo de Software.",
+    tags: [
+      "Javascript",
+      "Git",
+      "jQuery",
+      "Bases de datos",
+      "API de Google",
+      "SQL",
+    ],
+  },
+  {
+    role: "Empleado técnico en prácticas",
+    company: "Colegio de Educación Primaria Almadén",
+    period: "abr. 2016 — jun. 2016",
+    description:
+      "Unos meses muy productivos donde tomé un primer contacto con el mundo laboral y forjé relaciones laborales con algunos de mis compañeros de trabajo de allí durante las prácticas del Ciclo Formativo de Grado Medio de Sistemas MicroInformáticos y Redes.",
+    tags: [
+      "Linux",
+      "Windows",
+      "Comunicaciones",
+      "Instalación de equipos",
+      "Reparación de equipos informáticos",
+    ],
+  },
 ];
 
 /* =========================================================
@@ -144,24 +327,20 @@ function icon(name, size = 18) {
   `;
 
   const icons = {
-    mail:
-      '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>',
     github:
       '<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5A4.8 4.8 0 0 0 9 18v4"></path>',
     external:
       '<path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>',
     folder:
       '<path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"></path>',
-    arrowRight:
-      '<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>',
-    arrowLeft:
-      '<path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>',
-    star:
-      '<path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84L6.6 19.6l1.03-6-4.36-4.25 6.03-.88L12 3Z"></path>',
+    arrowRight: '<path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>',
+    arrowLeft: '<path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path>',
+    star: '<path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84L6.6 19.6l1.03-6-4.36-4.25 6.03-.88L12 3Z"></path>',
     linkedin:
       '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>',
     download:
-      '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path>'
+      '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path>',
   };
 
   return `<svg ${common}>${icons[name] || ""}</svg>`;
@@ -169,7 +348,7 @@ function icon(name, size = 18) {
 
 function chips(tags) {
   return (tags || [])
-    .map(tag => `<span class="chip">${escapeHtml(tag)}</span>`)
+    .map((tag) => `<span class="chip">${escapeHtml(tag)}</span>`)
     .join("");
 }
 
@@ -178,12 +357,12 @@ function formatDate(value) {
 
   return new Intl.DateTimeFormat("es-ES", {
     year: "numeric",
-    month: "short"
+    month: "short",
   }).format(new Date(value));
 }
 
 function updateActiveNav(route) {
-  document.querySelectorAll(".nav-link").forEach(link => {
+  document.querySelectorAll(".nav-link").forEach((link) => {
     link.removeAttribute("aria-current");
   });
 
@@ -208,7 +387,7 @@ function setDocumentTitle(route) {
     home: "Inicio",
     projects: "Proyectos",
     about: "Sobre mí",
-    contact: "Contacto"
+    contact: "Contacto",
   };
 
   document.title = `${labels[route] || "Inicio"} — Portafolio`;
@@ -320,12 +499,12 @@ function statsGrid() {
     <div class="stat-grid">
       ${profile.stats
         .map(
-          stat => `
+          (stat) => `
             <div class="stat">
               <div class="stat-value">${escapeHtml(stat.value)}</div>
               <div class="stat-label">${escapeHtml(stat.label)}</div>
             </div>
-          `
+          `,
         )
         .join("")}
     </div>
@@ -343,18 +522,17 @@ function renderHome(scrollToContact = false) {
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Diseño limpio · Vanilla JS · Neocities-ready</p>
+          <p class="eyebrow">Portfolio de silvericarus</p>
 
           <h1 class="title">
-            Construyo experiencias web
+            Construyo experiencias
             <span class="title-mark">modernas</span>
             y
             <span class="title-mark">rápidas</span>.
           </h1>
 
           <p class="lead">
-            Portafolio estático compatible con Neocities: sin build, sin dependencias de runtime,
-            responsive y con estética Material You en dark.
+            Busco incansablemente nuevos conocimientos tecnológicos, y disfruto afrontando retos
           </p>
 
           <div class="actions-row">
@@ -369,8 +547,9 @@ function renderHome(scrollToContact = false) {
         </div>
 
         <aside class="card hero-card" aria-label="Resumen del perfil">
-          <div class="hero-orb"></div>
-
+          <div class="hero-orb">
+		  	<img src="https://avatars.githubusercontent.com/u/10747420?v=4"/>
+		  </div>
           <div>
             <p class="eyebrow" style="margin-bottom:10px">${escapeHtml(profile.role)}</p>
             ${statsGrid()}
@@ -404,7 +583,7 @@ function renderHome(scrollToContact = false) {
           <div>
             <h2 class="section-title cta-title">¿Tienes un proyecto en mente?</h2>
             <p class="section-subtitle">
-              Cuéntame qué necesitas y vemos cómo convertirlo en una web clara, rápida y mantenible.
+              Cuéntame qué necesitas y vemos cómo convertirlo en una realidad.
             </p>
           </div>
 
@@ -421,7 +600,7 @@ function renderHome(scrollToContact = false) {
     setTimeout(() => {
       document.getElementById("contacto")?.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }, 0);
   } else {
@@ -437,10 +616,6 @@ function renderProjects() {
           <div>
             <p class="eyebrow">Archivo de trabajo</p>
             <h1 class="section-title">Todos los proyectos</h1>
-            <p class="section-subtitle">
-              Filtra por título, descripción, año o tecnología. Edita el array
-              <code>projects</code> para añadir tus trabajos reales.
-            </p>
           </div>
 
           <a class="btn btn-outlined" href="#/">${icon("arrowLeft", 16)}Volver</a>
@@ -465,12 +640,19 @@ function renderProjects() {
     </section>
   `;
 
-  const allTags = [...new Set(projects.flatMap(project => project.tags || []))].sort();
+  const allTags = [
+    ...new Set(projects.flatMap((project) => project.tags || [])),
+  ].sort();
   const tagSelect = document.getElementById("projectTag");
 
   tagSelect.insertAdjacentHTML(
     "beforeend",
-    allTags.map(tag => `<option value="${escapeHtml(tag)}">${escapeHtml(tag)}</option>`).join("")
+    allTags
+      .map(
+        (tag) =>
+          `<option value="${escapeHtml(tag)}">${escapeHtml(tag)}</option>`,
+      )
+      .join(""),
   );
 
   const searchInput = document.getElementById("projectSearch");
@@ -480,7 +662,7 @@ function renderProjects() {
     const q = searchInput.value.trim().toLowerCase();
     const tag = tagSelect.value;
 
-    const filtered = projects.filter(project => {
+    const filtered = projects.filter((project) => {
       const haystack = `
         ${project.title}
         ${project.description}
@@ -545,15 +727,12 @@ function renderAbout() {
           <p class="card-description skill-desc">Stack y competencias principales.</p>
 
           <div class="chips-row">
-            ${chips(profile.stack.concat(["Responsive", "UI/UX", "Testing", "Design Systems"]))}
+            ${chips(profile.stack.concat(["UI/UX", "Testing", "Proyect Management"]))}
           </div>
         </div>
 
         <div class="card card-pad">
           <h2 class="card-title">Resumen</h2>
-          <p class="card-description skill-desc">
-            Métricas orientativas. Sustitúyelas por datos reales cuando cierres el contenido.
-          </p>
 
           <div class="summary-stats">
             ${statsGrid()}
@@ -574,7 +753,7 @@ function renderAbout() {
         <div class="timeline">
           ${experience
             .map(
-              item => `
+              (item) => `
                 <article class="timeline-item">
                   <div class="timeline-head">
                     <div>
@@ -591,7 +770,7 @@ function renderAbout() {
                     ${chips(item.tags)}
                   </div>
                 </article>
-              `
+              `,
             )
             .join("")}
         </div>
@@ -604,7 +783,7 @@ function renderAbout() {
           <div>
             <h2 class="section-title">Certificaciones</h2>
             <p class="section-subtitle">
-              Galería filtrable con vista ampliada. Puedes enlazar credenciales externas o imágenes locales.
+              Galería filtrable con vista ampliada.
             </p>
           </div>
         </div>
@@ -633,7 +812,7 @@ function renderAbout() {
           <div>
             <h2 class="section-title cta-title">¿Colaboramos?</h2>
             <p class="section-subtitle">
-              Puedo ayudarte a convertir una idea en una web clara, estable y compatible con hosting estático.
+              Puedo ayudarte a convertir una idea en un proyecto real.
             </p>
           </div>
 
@@ -652,11 +831,18 @@ function setupCertifications() {
   const searchInput = document.getElementById("certSearch");
   const grid = document.getElementById("certGrid");
 
-  const issuers = [...new Set(certifications.map(cert => cert.issuer))].sort();
+  const issuers = [
+    ...new Set(certifications.map((cert) => cert.issuer)),
+  ].sort();
 
   issuerSelect.insertAdjacentHTML(
     "beforeend",
-    issuers.map(issuer => `<option value="${escapeHtml(issuer)}">${escapeHtml(issuer)}</option>`).join("")
+    issuers
+      .map(
+        (issuer) =>
+          `<option value="${escapeHtml(issuer)}">${escapeHtml(issuer)}</option>`,
+      )
+      .join(""),
   );
 
   function applyFilters() {
@@ -665,7 +851,7 @@ function setupCertifications() {
 
     const filtered = certifications
       .map((cert, index) => ({ ...cert, originalIndex: index }))
-      .filter(cert => {
+      .filter((cert) => {
         const haystack = `
           ${cert.title}
           ${cert.issuer}
@@ -680,17 +866,19 @@ function setupCertifications() {
       })
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    grid.dataset.filteredIndexes = JSON.stringify(filtered.map(cert => cert.originalIndex));
+    grid.dataset.filteredIndexes = JSON.stringify(
+      filtered.map((cert) => cert.originalIndex),
+    );
 
     grid.innerHTML = filtered.length
-      ? filtered.map(cert => certCard(cert, cert.originalIndex)).join("")
+      ? filtered.map((cert) => certCard(cert, cert.originalIndex)).join("")
       : `<div class="card empty-state grid-empty">No hay certificaciones que coincidan con el filtro.</div>`;
   }
 
   searchInput.addEventListener("input", applyFilters);
   issuerSelect.addEventListener("change", applyFilters);
 
-  grid.addEventListener("click", event => {
+  grid.addEventListener("click", (event) => {
     const btn = event.target.closest("[data-cert-index]");
     if (!btn) return;
 
@@ -772,7 +960,7 @@ function moveLightbox(direction) {
 
 lightboxClose.addEventListener("click", closeLightbox);
 
-lightbox.addEventListener("click", event => {
+lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) {
     closeLightbox();
   }
@@ -781,7 +969,7 @@ lightbox.addEventListener("click", event => {
 lightboxPrev.addEventListener("click", () => moveLightbox(-1));
 lightboxNext.addEventListener("click", () => moveLightbox(1));
 
-window.addEventListener("keydown", event => {
+window.addEventListener("keydown", (event) => {
   if (!lightbox.classList.contains("is-open")) return;
 
   if (event.key === "Escape") closeLightbox();
