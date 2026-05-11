@@ -180,6 +180,29 @@ const certifications = [
   },
 ];
 
+const postIndex = [
+  {
+    slug: "reflexiones-sobre-el-futuro-de-la-tecnologia-blockchain",
+    title: "Reflexiones sobre el futuro de la tecnología blockchain",
+    excerpt:
+      "Los usos actuales de la blockchain podrían ser más beneficiosos para la humanidad, entonces, ¿cómo podría cambiar o evolucionar esta tecnología?",
+    date: "2024-10-01",
+    readTime: "4 min",
+    tags: ["Tecnologías", "Blockchain"],
+    file: "./posts/reflexiones-sobre-el-futuro-de-la-tecnologia-blockchain.md",
+  },
+  {
+    slug: "proyecto-simulador-de-ecosistemas-0-inicio",
+    title: "Proyecto Simulador de Ecosistemas #0: Inicio",
+    excerpt:
+      "Acostumbrándome a desarrollar juegos sin jugadores y autómatas celulares",
+    date: "2024-10-01",
+    readTime: "6 min",
+    tags: ["Game Development", "Javascript"],
+    file: "./posts/proyecto-simulador-de-ecosistemas-0-inicio.md",
+  },
+];
+
 const experience = [
   {
     role: "Game Developer",
@@ -195,11 +218,7 @@ const experience = [
     period: "sept. 2025 — dic. 2025",
     description:
       "En este rol me especializé en la comercialización de las soluciones de gestión, contabilidad y facturación de Cegid (gama Informática3). Mi labor consistía en asesorar a empresas de distintos sectores, entendiendo sus necesidades y presentando cómo nuestras herramientas pueden optimizar sus procesos administrativos y financieros. Mi objetivo era acompañar a los clientes en todo el proceso de decisión, ofreciéndoles una visión clara de las ventajas del software y asegurando que cuenten con la información necesaria para elegir la solución que mejor se adapte a su negocio.",
-    tags: [
-      "Consultoría de ventas técnicas",
-      "Soporte técnico",
-      "Ventas"
-    ],
+    tags: ["Consultoría de ventas técnicas", "Soporte técnico", "Ventas"],
   },
   {
     role: "Representante de ventas",
@@ -373,7 +392,9 @@ function updateActiveNav(route) {
         ? "about"
         : route === "contact"
           ? "contact"
-          : "home";
+          : route === "blog"
+            ? "blog"
+            : "home";
 
   const current = document.querySelector(`[data-nav="${key}"]`);
 
@@ -388,6 +409,7 @@ function setDocumentTitle(route) {
     projects: "Proyectos",
     about: "Sobre mí",
     contact: "Contacto",
+    blog: "Blog",
   };
 
   document.title = `${labels[route] || "Inicio"} — Portafolio`;
@@ -528,7 +550,7 @@ function renderHome(scrollToContact = false) {
             Construyo experiencias
             <span class="title-mark">modernas</span>
             y
-            <span class="title-mark">rápidas</span>.
+            <span class="title-mark">rápidas</span>
           </h1>
 
           <p class="lead">
@@ -606,6 +628,181 @@ function renderHome(scrollToContact = false) {
   } else {
     scrollToTopFocus();
   }
+}
+
+function blogCard(post) {
+  return `
+    <article class="card card-pad">
+      <h3 class="card-title"><a href="#/blog/${escapeHtml(post.slug)}">${escapeHtml(post.title)}</a></h3>
+      <p class="card-description card-description-spaced">${escapeHtml(post.excerpt)}</p>
+      <p class="card-meta">${formatDate(post.date)} · ${escapeHtml(post.readTime)} de lectura</p>
+      <div class="chips-row chips-row-compact">${chips(post.tags)}</div>
+    </article>
+  `;
+}
+
+function renderBlog() {
+  app.innerHTML = `
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Publicaciones</p>
+            <h1 class="section-title">Blog</h1>
+            <p class="section-subtitle">Espacio para publicar artículos sobre desarrollo, accesibilidad y rendimiento web.</p>
+          </div>
+          <a class="btn btn-outlined" href="#/">${icon("arrowLeft", 16)}Volver</a>
+        </div>
+
+        <div class="grid-2">
+          ${postIndex.map(blogCard).join("")}
+        </div>
+      </div>
+    </section>
+  `;
+  scrollToTopFocus();
+}
+
+function parseInlineMarkdown(text) {
+  return escapeHtml(text)
+    .replace(
+      /!\[([^\]]*)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<img src="$2" alt="$1" loading="lazy">',
+    )
+    .replace(
+      /\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noreferrer">$1</a>',
+    )
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/__(.+?)__/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/_(.+?)_/g, "<em>$1</em>")
+    .replace(/`(.+?)`/g, "<code>$1</code>");
+}
+
+
+function markdownToHtml(md) {
+  const lines = md.split(/\r?\n/);
+  const out = [];
+  let inList = false;
+  let inIframe = false;
+  let iframeBuffer = [];
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (inIframe) {
+      iframeBuffer.push(rawLine);
+      if (/<\/iframe>\s*$/.test(line)) {
+        out.push(iframeBuffer.join("\n"));
+        iframeBuffer = [];
+        inIframe = false;
+      }
+      continue;
+    }
+
+    if (/^\s*$/.test(line)) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      continue;
+    }
+    if (/^<iframe\b/.test(line) && !/<\/iframe>\s*$/.test(line)) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      inIframe = true;
+      iframeBuffer = [rawLine];
+      continue;
+    }
+    if (/^<iframe\b[\s\S]*<\/iframe>\s*$/.test(line)) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      out.push(rawLine);
+      continue;
+    }
+    if (/^###\s+/.test(line)) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      out.push(`<h3>${parseInlineMarkdown(line.replace(/^###\s+/, ""))}</h3>`);
+      continue;
+    }
+    if (/^##\s+/.test(line)) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      out.push(`<h2>${parseInlineMarkdown(line.replace(/^##\s+/, ""))}</h2>`);
+      continue;
+    }
+    if (/^#\s+/.test(line)) {
+      if (inList) {
+        out.push("</ul>");
+        inList = false;
+      }
+      out.push(`<h1>${parseInlineMarkdown(line.replace(/^#\s+/, ""))}</h1>`);
+      continue;
+    }
+    if (/^-\s+/.test(line)) {
+      if (!inList) {
+        out.push("<ul>");
+        inList = true;
+      }
+      out.push(`<li>${parseInlineMarkdown(line.replace(/^-\s+/, ""))}</li>`);
+      continue;
+    }
+    if (inList) {
+      out.push("</ul>");
+      inList = false;
+    }
+    out.push(`<p>${parseInlineMarkdown(line)}</p>`);
+  }
+  if (inIframe && iframeBuffer.length) {
+    out.push(iframeBuffer.join("\n"));
+  }
+  if (inList) out.push("</ul>");
+  return out.join("\n");
+}
+
+async function renderPost(slug) {
+  const post = postIndex.find((item) => item.slug === slug);
+  if (!post) {
+    app.innerHTML = `<section class="section"><div class="container"><div class="card card-pad"><h1 class="section-title">Artículo no encontrado</h1><a class="btn btn-outlined" href="#/blog">Volver al blog</a></div></div></section>`;
+    scrollToTopFocus();
+    return;
+  }
+
+  app.innerHTML = `<section class="section"><div class="container"><div class="card card-pad"><p class="card-meta">Cargando artículo…</p></div></div></section>`;
+
+  try {
+    const response = await fetch(post.file);
+    if (!response.ok) throw new Error("No se pudo cargar el markdown");
+    const markdown = await response.text();
+
+    app.innerHTML = `
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">${formatDate(post.date)} · ${escapeHtml(post.readTime)} de lectura</p>
+              <h1 class="section-title">${escapeHtml(post.title)}</h1>
+            </div>
+            <a class="btn btn-outlined" href="#/blog">${icon("arrowLeft", 16)}Volver al blog</a>
+          </div>
+          <article class="card card-pad markdown-content">${markdownToHtml(markdown)}</article>
+        </div>
+      </section>`;
+  } catch {
+    app.innerHTML = `<section class="section"><div class="container"><div class="card card-pad"><h1 class="section-title">No se pudo cargar el artículo</h1><a class="btn btn-outlined" href="#/blog">Volver al blog</a></div></div></section>`;
+  }
+
+  scrollToTopFocus();
 }
 
 function renderProjects() {
@@ -985,15 +1182,21 @@ function parseRoute() {
   const hash = window.location.hash || "#/";
   const clean = hash.replace(/^#/, "");
 
-  if (clean === "/proyectos") return "projects";
-  if (clean === "/sobre-mi") return "about";
-  if (clean === "/contacto") return "contact";
+  if (clean === "/proyectos") return { route: "projects" };
+  if (clean === "/sobre-mi") return { route: "about" };
+  if (clean === "/contacto") return { route: "contact" };
+  if (clean === "/blog") return { route: "blog" };
+  if (clean.startsWith("/blog/"))
+    return {
+      route: "post",
+      slug: decodeURIComponent(clean.replace("/blog/", "")),
+    };
 
-  return "home";
+  return { route: "home" };
 }
 
-function renderRoute() {
-  const route = parseRoute();
+async function renderRoute() {
+  const { route, slug } = parseRoute();
 
   updateActiveNav(route);
   setDocumentTitle(route);
@@ -1001,6 +1204,8 @@ function renderRoute() {
   if (route === "projects") return renderProjects();
   if (route === "about") return renderAbout();
   if (route === "contact") return renderHome(true);
+  if (route === "blog") return renderBlog();
+  if (route === "post") return renderPost(slug);
 
   return renderHome(false);
 }
